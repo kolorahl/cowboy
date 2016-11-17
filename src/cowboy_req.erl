@@ -375,7 +375,8 @@ parse_header_fun(<<"sec-websocket-extensions">>) -> fun cow_http_hd:parse_sec_we
 parse_header_fun(<<"sec-websocket-protocol">>) -> fun cow_http_hd:parse_sec_websocket_protocol_req/1;
 parse_header_fun(<<"transfer-encoding">>) -> fun cow_http_hd:parse_transfer_encoding/1;
 parse_header_fun(<<"upgrade">>) -> fun cow_http_hd:parse_upgrade/1;
-parse_header_fun(<<"x-forwarded-for">>) -> fun cow_http_hd:parse_x_forwarded_for/1.
+parse_header_fun(<<"x-forwarded-for">>) -> fun cow_http_hd:parse_x_forwarded_for/1;
+parse_header_fun(<<"te">>) -> fun cow_http_hd:parse_te/1.
 
 parse_header(Name, Req, Default, ParseFun) ->
 	case header(Name, Req) of
